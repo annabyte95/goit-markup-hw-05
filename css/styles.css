@@ -646,8 +646,9 @@ img {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
-  transition-property: opacity, visibility;
-  transition: 250ms ease-in-out;
+  transition:
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-overlay.is-open {
@@ -712,6 +713,9 @@ img {
 .feedback-wrapper {
   margin-bottom: 8px;
 }
+.feedback-wrapper:last-of-type {
+  margin-bottom: 16px;
+}
 .feedback-label {
   font-size: 12px;
   line-height: 1.17;
@@ -731,6 +735,7 @@ img {
   border-radius: 4px;
   outline: none;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: #fcfcfc;
 }
 .feedback-input:focus {
   border-color: #4d5ae5;
@@ -759,7 +764,8 @@ img {
   letter-spacing: 0.04em;
   outline: none;
   resize: none;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: #fcfcfc;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .feedback-comment::placeholder {
   font-size: 12px;
@@ -774,7 +780,7 @@ img {
   display: block;
   margin-bottom: 24px;
   font-size: 12px;
-  line-height: 1.17;
+  line-height: 1.33;
   letter-spacing: 0.04em;
   color: #8e8f99;
 }
